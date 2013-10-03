@@ -1,0 +1,12 @@
+<flows>
+    <vType id="Vehicle" length="5" maxSpeed="70">
+        <carFollowing-Krauss accel="0.8" decel="4.5" sigma="0.5"/>
+    </vType>
+    <flow id="VehicleFlowNorth" from="28925528" begin="12" end="3612" number="400" periode="1" type="Vehicle"/>
+    <flow id="VehicleFlowSouth" from="239331354" begin="12" end="3612" number="400" periode="1" type="Vehicle"/>
+    <flow id="VehicleFlowEast" from="-1365" begin="12" end="3612" number="400" periode="1" type="Vehicle"/>
+    <flow id="VehicleFlowWest" from="229259796" begin="12" end="3612" number="400" periode="1" type="Vehicle"/>
+    
+
+</flows>
+

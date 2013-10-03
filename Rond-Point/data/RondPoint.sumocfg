@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.sf.net/xsd/sumoConfiguration.xsd">
+    <input>
+        <net-file value="RondPoint.net.xml"/>
+        <route-files value="RondPoint.rou.xml,RondPointBus.rou.xml"/>
+	<additional-files value="RondPoint.det.xml"/>
+    </input>
+
+    <output>
+	<tripinfo-output value="RondPointtripinfo.out.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+    </time>
+    <report>
+	<no-step-log value="true"/>
+    </report>
+   <traci_server>
+    	<processing>
+        	<lanechange.allow-swap value="True"/>
+        	<time-to-teleport value="200"/>
+    	</processing>
+         <remote-port value="8813"/>
+    </traci_server>
+
+</configuration>

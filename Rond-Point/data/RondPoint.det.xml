@@ -1,0 +1,7 @@
+<additional>
+<e1Detector id="0" lane="240120119_0" pos="10" freq="30" file="RondPoint.out" friendlyPos="x"/>
+<e1Detector id="1" lane="-240120119_0" pos="10" freq="30" file="RondPoint.out" friendlyPos="x"/>
+<e1Detector id="2" lane="-1277_0" pos="320" freq="30" file="RondPoint.out" friendlyPos="x"/>
+<e1Detector id="3" lane="-240120122_0" pos="320" freq="30" file="RondPoint.out" friendlyPos="x"/>
+</additional>
+
