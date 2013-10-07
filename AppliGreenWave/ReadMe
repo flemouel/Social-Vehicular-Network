@@ -1,4 +1,5 @@
-AppliGreenWave :
+AppliGreenWave : Permet de synchroniser les feux au passage du vehicule d'urgence
+			- faire ralentir les vehicules approchant de l'intersection où se trouve le vehicule d'urgence
 
 Commandes :
 		1) ./runner.sh n (n un entier corresponde au nombre de vehicule voulu, n/2 sera l'identité du vehicule d'urgence)
