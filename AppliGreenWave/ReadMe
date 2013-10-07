@@ -1,0 +1,16 @@
+AppliGreenWave :
+
+Commandes :
+		1) ./runner.sh n (n un entier corresponde au nombre de vehicule voulu, n/2 sera l'identité du vehicule d'urgence)
+		
+		2) ./runner.py pour faire tourner la simulation
+
+		3) ./result.sh pour avoir les résultats données globales des autres vehicules et du vehicule d'urgence
+
+		4) ./runnerWO.py permet de faire la simulation sans communication
+
+		5) ./result.sh donne les résultats globaux des autres vehicules et du vehicule d'urgence en cas de communication.
+		
+		6) ./resultWO.sh donne les résultats globaux des autres vehicules et du vehicule d'urgence sans communication.
+
+Les quelques erreurs sont dues à la topologie de la carte qui n'est pas parfaite.
