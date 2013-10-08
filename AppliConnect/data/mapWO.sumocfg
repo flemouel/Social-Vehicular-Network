@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.sf.net/xsd/sumoConfiguration.xsd">
+    <input>
+        <net-file value="map.net.xml"/>
+        <route-files value="map.rou.xml"/>
+    </input>
+
+    <output>
+	<tripinfo-output value="maptripinfoWO.out.xml"/>
+        
+    </output>
+
+    <time>
+        <begin value="0"/>
+    </time>
+    <processing>
+        <lanechange.allow-swap value="true"/>
+        <time-to-teleport value="-1"/>
+    </processing>
+    <report>
+	<no-step-log value="true"/>
+    </report>
+</configuration>

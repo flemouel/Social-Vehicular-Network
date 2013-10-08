@@ -1,0 +1,65 @@
+AppliConnect :
+
+Fonctions : 	- simulation avec reroutage des vehicules 
+		- le chemin le plus court en temps est calculé hors ligne au début de la simulation
+		- les vehicules se croisant et ayant des chemins en communs s'échangent leurs informations
+		- choix du nombre de vehicule circulant pour chaque simulation
+		- le plus court chemin est en temps calculé avec l'algo de Dijkstra
+
+Obtenir la Carte : 
+
+Carte prise avec OpenStreet map un fichier map.osm est converti en map.net.xml avec netconvert en interdisant les demi-tours et certaines types de voies.
+
+netconvert --no-turnarounds true --remove-edges.by-vclass hov,taxi,bus,delivery,transport,lightrail,cityrail,pedestrian,rail_slow,rail_fast,motorcycle,bicycle  --junctions.join --osm-files map.osm -o map.net.xml
+
+
+
+I ) INITIALISATION : ./runner.sh x
+
+"./runner.sh x" permet de calculer les x departs et arrivées de chaque vehicule et de générer les chemins de chaque vehicule pour toutes les simulations.
+
+Précision des fichiers utilisés dans runner.sh :
+
+	- "./generateTrip.sh x " permet de générer les x départs et arrivées de manière aléatoires (fonction : randomTrip.py) sur la carte.
+Entrée : un fichier map.net.xml (la carte de la ville)
+Sortie : un fichier map.trips.xml avec Départ et Arrivées.
+
+~/Documents/Sumo/sumo-0.16.0/tools/trip/randomTrips.py -n data/map.net.xml -o data/map.trips.xml -e $1
+
+	- "duarouter" permet de construire les chemins le plus court hors ligne en fonction des données de la carte.
+Duarouter : Entrée : le fichier carte map.net.xml, le fichier map.trips.xml avec les Départs et Arrivées
+            Sortie : un fichier map.rou.xml contenant le trajet des voitures calculé avec Dijkstra par défaut.
+    	    --repair et --ignore-erros permettent d'ignorer les erreurs de construction de la carte
+
+duarouter --repair --ignore-errors -t data/map.trips.xml -n data/map.net.xml -o data/map.rou.xml
+
+II ) SIMULATION
+
+1) Avec reroutage à chaque fois que deux vehicules se croisent et ont des points communs sur leurs parcours :
+
+	-"./runner.py"
+
+2) Sans reroutage pour comparaison des résultats :
+
+	-"./runnerWO.py"
+
+III ) RESULTAT :
+
+"./result.sh"
+
+Précision des fichiers utilisés pour obtenir les resultats :
+
+	- "summary*.py" permet de résumer les données des simulations : temps moyen de parcours, longueur moyenne de parcours, la vitesse moyenne durant la simulation.
+libxml2 est une librairie pour python pour traiter les données xml dans summary*.py
+
+
+
+
+
+
+
+Autres :
+
+"data" contient les fichiers nécéssaires à la simulation. 
+
+
