@@ -8,7 +8,7 @@ Possibilités : 	- 1) simulation sans reroutage des vehicules : chemin le plus c
 		- choix du nombre de vehicule circulant pour chaque simulation
 		- le plus court chemin est en temps calculé avec l'algo de Dijkstra
 
-Obtenir la Carte : 
+Obtenir la Carte (déjà initialisé) : 
 
 Carte prise avec OpenStreet map un fichier map.osm est converti en map.net.xml avec netconvert.
 
@@ -17,7 +17,7 @@ netconvert --no-turnarounds true --osm-files map.osm -o map.net.xml
 
 
 
-I ) Initialisation : ./runner.sh x y
+I ) Initialisation faire : ./runner.sh x y
 
 "./runner.sh x y" permet de calculer les x departs et arrivées de chaque vehicule et de générer les chemins de chaque vehicule pour toutes les simulations. y permet de faire le choix de générer ces départs et arrivées localisés sur la carte. Les valeurs de y sont "n" pour ne pas mettre de départ et arrivées localisées ou "y" pour mettre l'option.
 
