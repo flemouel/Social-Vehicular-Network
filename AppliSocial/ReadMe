@@ -1,0 +1,46 @@
+AppliSocial:
+
+Possibilités : 	- Couplage avec le simulateur de reseau social Snap
+		- Points d'intérêts répartis dans la ville 
+		- Reroutage d'un vehicule qui croise un autre vehicule de sa communauté ayant une info à partager sur un Point d'intérêt
+		- choix du nombre de vehicule circulant pour chaque simulation
+
+Obtenir la Carte : 
+
+Carte prise avec OpenStreet map un fichier map.osm est converti en map.net.xml avec netconvert.
+
+netconvert --osm-files file.osm -o map.net.xml
+
+
+
+I ) Initialisation : ./runner.sh x
+
+"./runner.sh x" permet de calculer les x departs et arrivées de chaque vehicule et de générer les chemins de chaque vehicule pour toutes les simulations. Il permet aussi de générer un graphe social via SNAP : forestfire ......... qui contient le même nombre de noeud que de véhicules choisis. Ensuite runner.sh permet de detecter les communautés grâce à l'algo glouton de Clauset-Newman-Moore.
+
+Précision des fichiers utilisés dans runner.sh :
+
+	- "randomTrips.py y" permet de générer les x départs et arrivées de manière aléatoires sur la carte. "y" permet de choisir le taux de vehicules possedant une information à faire circuler à la communauté concernée.
+Entrée : un fichier map.net.xml (la carte de la ville)
+Sortie : un fichier map.trips.xml avec Départ et Arrivées.
+
+~/Documents/Sumo/sumo-0.16.0/tools/trip/randomTrips.py -n data/map.net.xml -o data/map.trips.xml -e $1
+
+	- "duarouter" permet de construire les chemins le plus court hors ligne en fonction des données de la carte.
+Duarouter : Entrée : le fichier carte map.net.xml, le fichier map.trips.xml avec les Départs et Arrivées
+            Sortie : un fichier map.rou.xml contenant le trajet des voitures calculé avec Dijkstra par défaut.
+    	    --repair et --ignore-erros permettent d'ignorer les erreurs de construction de la carte
+
+duarouter --repair --ignore-errors -t data/map.trips.xml -n data/map.net.xml -o data/map.rou.xml
+
+II ) SIMULATION
+
+	-"./runner.py x" avec 0<=x<=1
+
+x permet de déterminer le taux de vehicule possédant l'information dans la communauté.
+
+
+Autres :
+
+"data" contient les fichiers nécéssaires à la simulation. 
+
+

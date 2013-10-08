@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<!-- generated on mar. 08 oct. 2013 12:29:33 CEST by SUMO gui Version 0.16.0
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.sf.net/xsd/sumo-gui.exeConfiguration.xsd">
+
+    <input>
+        <net-file value="data/map.net.xml"/>
+        <route-files value="data/map.rou.xml"/>
+        <additional-files value="data/poi.add.xml"/>
+    </input>
+
+    <output>
+        <tripinfo-output value="data/maptripinfo.out.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+    </time>
+
+    <processing>
+        <time-to-teleport value="100"/>
+        <lanechange.allow-swap value="true"/>
+    </processing>
+
+    <report>
+        <no-step-log value="true"/>
+    </report>
+
+    <traci_server>
+        <remote-port value="8813"/>
+    </traci_server>
+
+</configuration>
+-->
+
+<tripinfos>
+    <tripinfo id="17" depart="17.00" departLane="-207908670#3_0" departPos="5.10" departSpeed="0.00" departDelay="0.00" arrival="57.00" arrivalLane="128930533_0" arrivalPos="43.79" arrivalSpeed="14.16" duration="40.00" routeLength="86.15" waitSteps="24" rerouteNo="0" devices="tripinfo_17" vType="DEFAULT_VEHTYPE" vaporized=""/>
+</tripinfos>

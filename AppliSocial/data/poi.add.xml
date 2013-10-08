@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<pois>
+<poi id="buffalo" type="restaurant grillade" color="1,0,0" layer="10" x="3817" y="1810"/>
+<poi id="chinois" type="restaurant chinois" color="1,0,0" layer="10" x="3876" y="2154"/>
+</pois>
