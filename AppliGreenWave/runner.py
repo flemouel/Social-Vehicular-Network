@@ -104,7 +104,7 @@ while step == 0 or traci.simulation.getMinExpectedNumber() > 0:
 			coordXJunction=float(CoordJunction[0])
 			coordYJunction=float(CoordJunction[1])
 			
-			#le vehicule d'urgence est proche de l'intersection
+			#le vehicule d'urgence est proche de l'intersection (30 metres de rayon)
 			if (coordxVehEmergency>=coordXJunction-30) and (coordxVehEmergency<=coordXJunction+30) and (coordyVehEmergency>=coordYJunction-30) and (coordyVehEmergency<=coordYJunction+30) and (traci.vehicle.getRoadID(vehIdEmergency) in EdgeInJunction[index]):
 				ListeVehIDJunc=vehInJunction(index,ListeVehIDJunc,coordXJunction,coordYJunction,EdgeInJunction,IdJunction)
 					
