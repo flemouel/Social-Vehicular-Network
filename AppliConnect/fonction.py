@@ -77,17 +77,18 @@ def changeSaveTimeAndSpeed(Visited,ListVeh,time,speed,ListVisited,vehID,ListTrav
 
 
 
-def reroutage(Inter,ListTravelTime,vehID1,vehID2,ListVeh):
-	if len(Inter)>0:
+def reroutage(VisitedEdge2,ListTravelTime,vehID1,vehID2,ListVeh):
+	if len(VisitedEdge2)>0:
 
 		#reroutage du vehicule 1 en fonction des donnees collectees
-		for edge in Inter :
+		for edge in VisitedEdge2 :
 			TravelTime=ListTravelTime[ListVeh.index(vehID2)]
-			traci.edge.adaptTraveltime(edge,TravelTime[Inter.index(edge)])
+			traci.edge.adaptTraveltime(edge,TravelTime[VisitedEdge2.index(edge)])
 			traci.vehicle.rerouteTraveltime(vehID1)
 
+
 		#mis a jour du temps de parcours des liens modifies pour le reroutage
-		for edge in Inter:
+		for edge in VisitedEdge2:
 			lane=edge+'_0'
 			L=traci.lane.getLength(lane)
 			S=traci.lane.getMaxSpeed(lane)
