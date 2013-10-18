@@ -8,7 +8,7 @@
 
     <flow id="VehicleFlowSouthToEast" from="239331354" to="105490279" begin="0" end="3600" number="70" periode="25" type="Vehicle"/>
     <flow id="VehicleFlowSouthToNorth" from="239331354" to="105490284" begin="2" end="3600" number="30" periode="25" type="Vehicle"/>
-    <flow id="VehicleFlowSouthToWest" from="239331354" to="105490271" begin="4" end="3600" number="30" periode="25" type="Vehicle"/>
+    <flow id="VehicleFlowSouthToWest" from="239331354" to="105490271" begin="4" end="3600" number="60" periode="25" type="Vehicle"/>
 
     <flow id="VehicleFlowEastToNorth" from="-1365" to="105490284" begin="0" end="3600" number="172" periode="5" type="Vehicle"/>
     <flow id="VehicleFlowEastToWest" from="-1365" to="105490271" begin="2" end="3600" number="428" periode="5" type="Vehicle"/>

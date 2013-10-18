@@ -2,7 +2,6 @@
 import libxml2,random
 from libxml2 import xmlAttr
 from random import randrange
-import traci
 
 
 #fonction pour trouver l'intersection de deux listes

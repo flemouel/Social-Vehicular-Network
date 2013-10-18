@@ -1,7 +1,7 @@
 <flows>
     <vType id="Bus" accel="0.8" decel="4.5" sigma="0.5" length="17" minGap="3" maxSpeed="25" guiShape="bus"/>
     <flow id="BusFlowLeft" from="-240120122" to="--1277" begin="0" end="3600" number="7" periode="480" type="Bus"/>
-    <flow id="BusFlowRight" from="-1277" to="240120122" begin="20" end="3600" number="7" periode="480" type="Bus"/>
+ 
     <flow id="BusFlowLeft_Right" from="-240120122" to="239331353" begin="10" end="3600" number="7" periode="480" type="Bus"/>
-    <flow id="BusFlowRight_Right" from="-1277" to="105490284" begin="35" end="3600" number="12" periode="480" type="Bus"/>
+  
 </flows>

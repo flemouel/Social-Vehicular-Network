@@ -112,7 +112,7 @@ while step == 0 or traci.simulation.getMinExpectedNumber() > 0:
 			traci.vehicle.rerouteTraveltime(vehID)	
 			
 			#mis a jour du poids change
-			updateEdgeWeight(RoadPoiID[0])	
+			updateEdgeWeight(RoadPoiID)	
 			
 	step=step+1
 traci.close()

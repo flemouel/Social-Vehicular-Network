@@ -59,6 +59,12 @@ def ChangeBusTrafficLights(loop1,loop2,feu,step,check,Prog,programPointer,i,Prog
 		traci.trafficlights.setRedYellowGreenState(feu,ProgInitial[i])
 		i=i+1
     if no > 0 and check=='':
+	print step
+	print feu
+	print "no1" 
+	print no1
+	print "no2"
+	print no2
 	if counter!=0:
 		if c-b==0:
 			traci.trafficlights.setRedYellowGreenState(feu,Prog[1])
