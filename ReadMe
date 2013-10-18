@@ -1,6 +1,55 @@
+Environnement : Ubuntu 12.06
 
-Installer Sumo version 0.16.0 ou superieur
 
-Installer SNAP version 1.11
+------Sumo version 0.16.0 ou superieur------
 
-Dossiers Sumo et Snap sont placés dans "~/Documents"
+download the file on : http://sumo-sim.org/wiki/Downloads
+
+Prerequisites:
+
+The packages bellow are necessary to build SUMO with gui:
+
+$ sudo apt-get install libgdal1-dev proj libxerces-c2-dev
+$ sudo apt-get install libfox-1.6-dev libgl1-mesa-dev libglu1-mesa-dev
+
+Ubuntu 12.06 does not ship with libgdal.so, only with libgdal1.7.0.so. So, create a symbolic link:
+
+$ sudo ln -s /usr/lib/libgdal1.7.0.so /usr/lib/libgdal.so
+
+Installation:
+
+Decompress the tarball:
+
+$ tar -xzvf sumo-src-0.16.0.tar.gz
+
+Move the decompressed directory to '/usr/local/src':
+
+$ sudo mv -v sumo-0.16.0 /usr/local/src
+
+Enter the source directory and call configure, make and make install:
+
+$ cd /usr/local/src/sumo-0.15.0
+
+$ ./configure --with-fox-includes=/usr/include/fox-1.6 \
+--with-gdal-includes=/usr/include/gdal --with-proj-libraries=/usr \
+--with-gdal-libraries=/usr --with-proj-gdal
+
+$ make
+$ sudo make install
+
+To call SUMO in the command line, type:
+
+$ sumo
+
+or
+
+$ sumo-gui
+
+
+----SNAP version 1.11-----
+
+download file on the website http://snap.stanford.edu/snap/download.html
+
+To compile from the command line, execute: make all 
+
+

@@ -101,12 +101,8 @@ while step == 0 or traci.simulation.getMinExpectedNumber() > 0:
 					#liens visites par le vehicule 2
 					VisitedEdge2=ListVisited[ListVeh.index(vehID2)][0:len(ListVisited[ListVeh.index(vehID2)])-1]
 
-					#liens a visiter par le vehicule 1
-					FuturEdge1=Route1[Index1:len(Route1)-1]
-
-					#on regarde si le vehicule 1 va passer sur des liens visites par le vehicule 2	
-					Inter=intersect(VisitedEdge2,FuturEdge1)
-					reroutage(Inter,ListTravelTime,vehID1,vehID2,ListVeh)
+					#le vehicule 1 possede de nouvelles informations pour se rerouter	
+					reroutage(VisitedEdge2,ListTravelTime,vehID1,vehID2,ListVeh)
 		
 	step=step+1
 traci.close()

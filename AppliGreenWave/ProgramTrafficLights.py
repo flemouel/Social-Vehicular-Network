@@ -28,7 +28,7 @@ def presenceVehEmergency(check):
 
 
 
-#Enregistrement des vehicules presents autour de l'intersection ou passe le vehicule d'urgence : ListeVehIDJunc
+#Enregistrement des vehicules presents autour de l'intersection ou passe le vehicule d'urgence dans un rayon de 40metres par rapport à l'intersection : ListeVehIDJunc
 
 def vehInJunction(index,ListeVehIDJunc,X,Y,EdgeInJunction,IdJunction):
 	ListeVehIDJunc[index]=[]

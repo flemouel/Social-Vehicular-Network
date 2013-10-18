@@ -84,6 +84,7 @@ while step == 0 or traci.simulation.getMinExpectedNumber() > 0:
 		step=step+1
 
 	if finish!='ok':
+		#enregistrement des parametres du vehicule d'urgence
 		ParameterVehEmergency=presenceVehEmergency(check)
 		coordxVehEmergency=ParameterVehEmergency[1]
 		coordyVehEmergency=ParameterVehEmergency[2]
@@ -92,16 +93,18 @@ while step == 0 or traci.simulation.getMinExpectedNumber() > 0:
 		Last2RoadVehEmergency=ParameterVehEmergency[6]
 		vehIdEmergency=ParameterVehEmergency[3]
 		check=ParameterVehEmergency[0]
-
+		
+		#fin du parcours du vehicule d'urgence
 		if check=='ok' and (traci.vehicle.getRoadID(vehIdEmergency)==LastRoadVehEmergency or traci.vehicle.getRoadID(vehIdEmergency)==Last2RoadVehEmergency):
 			finish='ok'
 
+		#pour chaque intersection
 		for CoordJunction in CoordJunctionList:
         		index=CoordJunctionList.index(CoordJunction)
 			coordXJunction=float(CoordJunction[0])
 			coordYJunction=float(CoordJunction[1])
 			
-			#le vehicule d'urgence est proche de l'intersection
+			#le vehicule d'urgence est proche de l'intersection (30 metres de rayon)
 			if (coordxVehEmergency>=coordXJunction-30) and (coordxVehEmergency<=coordXJunction+30) and (coordyVehEmergency>=coordYJunction-30) and (coordyVehEmergency<=coordYJunction+30) and (traci.vehicle.getRoadID(vehIdEmergency) in EdgeInJunction[index]):
 				ListeVehIDJunc=vehInJunction(index,ListeVehIDJunc,coordXJunction,coordYJunction,EdgeInJunction,IdJunction)
 					
@@ -112,8 +115,10 @@ while step == 0 or traci.simulation.getMinExpectedNumber() > 0:
 					Initialize=ChangeTrafficLightState[1]
 					IdTrafficLights=ChangeTrafficLightState[2]
 					ProgramTrafficlights=ChangeTrafficLightState[3]
+					#changement du comportement des vehicules
 					vehNearVehEmergency1(ListeVehIDJunc,index,vehIdEmergency)
 				else:	
+					#ralentissement des vehicules pour les intersections sans feux
 					vehNearVehEmergency2(ListeVehIDJunc,index,vehIdEmergency)
 					
 			#remise a jour des feux
