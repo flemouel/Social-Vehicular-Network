@@ -22,13 +22,13 @@ Decompress the tarball:
 
 $ tar -xzvf sumo-src-0.16.0.tar.gz
 
-Move the decompressed directory to '/usr/local/src':
+Move the decompressed new directory (sumo) to '/usr/share/':
 
-$ sudo mv -v sumo-0.16.0 /usr/local/src
+$ sudo mv -v sumo-0.16.0 /usr/share/sumo
 
 Enter the source directory and call configure, make and make install:
 
-$ cd /usr/local/src/sumo-0.15.0
+$ cd /usr/share/sumo/
 
 $ ./configure --with-fox-includes=/usr/include/fox-1.6 \
 --with-gdal-includes=/usr/include/gdal --with-proj-libraries=/usr \
@@ -50,6 +50,10 @@ $ sumo-gui
 
 download file on the website http://snap.stanford.edu/snap/download.html
 
-To compile from the command line, execute: make all 
+place snap in :
+
+/opt/snap/Snap-1.11
+
+To compile from the command line, execute: make all in Snap-1.11
 
 
